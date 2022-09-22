@@ -216,7 +216,7 @@ def get_some_reply(data,message,name,reply_to_name):
 
 
 def RateUp(message, name, reply_to_name):
-    Rating_data = LoadJson('TrigExport\Rating.json')
+    Rating_data = LoadJson('TrigExport/Rating.json')
     Ratings = Rating_data['Ratings']
     id = message.reply_to_message.from_user.id
     done = False
@@ -234,7 +234,7 @@ def RateUp(message, name, reply_to_name):
             #RatePlus += 1
             #Ratings['id'] = str(RatePlus)
             result = 1
-    with open ('TrigExport\Rating.json','w') as file_write:
+    with open ('TrigExport/Rating.json','w') as file_write:
         json.dump(Rating_data, file_write)
     return result
 #print(RateUp())
@@ -244,7 +244,7 @@ def RateUp(message, name, reply_to_name):
 
 
 def RateDn(message, name, reply_to_name):
-    Rating_data = LoadJson('TrigExport\Rating.json')
+    Rating_data = LoadJson('TrigExport/Rating.json')
     Ratings = Rating_data['Ratings']
     id = message.reply_to_message.from_user.id
     found = False
@@ -261,7 +261,7 @@ def RateDn(message, name, reply_to_name):
             #RatePlus += 1
             #Ratings['id'] = str(RatePlus)
             result = -1
-    with open ('TrigExport\Rating.json','w') as file_write:
+    with open ('TrigExport/Rating.json','w') as file_write:
         json.dump(Rating_data, file_write)
     return result
 #print(RateUp())
@@ -271,7 +271,7 @@ def RateDn(message, name, reply_to_name):
 
 
 def GetMyInfo(message):
-    Rating_data = LoadJson('TrigExport\Rating.json')
+    Rating_data = LoadJson('TrigExport/Rating.json')
     Ratings = Rating_data['Ratings']
     id = message.from_user.id
     for each in Ratings:
@@ -285,7 +285,7 @@ def GetMyInfo(message):
 
 
 def GetRateInfo(message):
-    Rating_data = LoadJson('TrigExport\Rating.json')
+    Rating_data = LoadJson('TrigExport/Rating.json')
     Ratings = Rating_data['Ratings']
     found = False
     if message.reply_to_message == None:
